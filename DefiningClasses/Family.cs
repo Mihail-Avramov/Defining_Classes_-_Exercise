@@ -25,5 +25,10 @@ namespace DefiningClasses
             return this.familyMembersList.MaxBy(m => m.Age);
         }
 
+        public List<Person> GetOlderThan30()
+        {
+            return this.familyMembersList.FindAll(m => m.Age > 30);
+        }
+
     }
 }

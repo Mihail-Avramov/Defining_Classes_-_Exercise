@@ -21,8 +21,15 @@
                 newFamily.AddMember(newPerson);
             }
 
-            Person person = newFamily.GetOldestMember();
-            Console.WriteLine($"{person.Name} {person.Age}");
+            //Person person = newFamily.GetOldestMember();
+            //Console.WriteLine($"{person.Name} {person.Age}");
+
+            List<Person> olderThan30 = newFamily.GetOlderThan30();
+
+            foreach (var person in olderThan30.OrderBy(p => p.Name))
+            {
+                Console.WriteLine($"{person.Name} - {person.Age}");
+            }
         }
     }
 }
