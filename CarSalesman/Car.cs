@@ -33,51 +33,11 @@ namespace CarSalesman
             this.color = color;
         }
 
-        public string Color
-		{
-			get { return color; }
-		}
-
-		public int Weight
-		{
-			get { return weight; }
-		}
-
-		public Engine Engine
-		{
-			get { return engine; }
-		}
-
-        public string Model
-		{
-			get { return model; }
-		}
-
-
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"{this.model}:");
-            sb.AppendLine($"  {this.engine.Model}:");
-            sb.AppendLine($"    Power: {this.engine.Power}");
-            if (this.engine.Displacement == default)
-            {
-                sb.AppendLine($"    Displacement: n/a");
-            }
-            else
-            {
-                sb.AppendLine($"    Displacement: {this.engine.Displacement}");
-            }
-
-            if (this.engine.Efficiency == default)
-            {
-                sb.AppendLine("    Efficiency: n/a");
-            }
-            else
-            {
-                sb.AppendLine($"    Efficiency: {this.engine.Efficiency}");
-            }
-
+            sb.AppendLine(this.engine.ToString());
             if (this.weight == default)
             {
                 sb.AppendLine("  Weight: n/a");

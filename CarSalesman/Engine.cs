@@ -1,4 +1,6 @@
-﻿namespace CarSalesman
+﻿using System.Text;
+
+namespace CarSalesman
 {
     public class Engine
     {
@@ -31,25 +33,36 @@
             this.efficiency = efficiency;
         }
 
+        public string Model
+        {
+            get { return this.model; }
+        }
 
-        public string Efficiency
-		{
-			get { return this.efficiency; }
-		}
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
 
-        public int Displacement
-		{
-			get { return this.displacement; }
-		}
-		
-		public int Power
-		{
-			get { return this.power; }
-		}
+            sb.AppendLine($"  {this.model}:");
+            sb.AppendLine($"    Power: {this.power}");
+            if (this.displacement == default)
+            {
+                sb.AppendLine($"    Displacement: n/a");
+            }
+            else
+            {
+                sb.AppendLine($"    Displacement: {this.displacement}");
+            }
 
-		public string Model
-		{
-			get { return this.model; }
-		}
+            if (this.efficiency == default)
+            {
+                sb.Append("    Efficiency: n/a");
+            }
+            else
+            {
+                sb.Append($"    Efficiency: {this.efficiency}");
+            }
+
+            return sb.ToString();
+        }
     }
 }
