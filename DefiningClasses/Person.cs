@@ -10,6 +10,8 @@ namespace DefiningClasses
     {
 		private string name;
 		private int age;
+        private int count;
+        private int sum;
 
         public Person()
         {
